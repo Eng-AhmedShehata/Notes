@@ -13,7 +13,7 @@ android {
         }
     }
     defaultConfig {
-        applicationId "com.example.noteee"
+        applicationId "com.android.noteapp"
         minSdkVersion 20
         targetSdkVersion 30
         versionCode 1

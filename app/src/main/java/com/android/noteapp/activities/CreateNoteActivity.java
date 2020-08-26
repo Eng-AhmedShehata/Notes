@@ -1,4 +1,4 @@
-package com.example.note.activities;
+package com.android.noteapp.activities;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -27,17 +27,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.note.R;
-import com.example.note.database.NotesDatabase;
-import com.example.note.entities.DBNote;
+import com.android.noteapp.R;
+import com.android.noteapp.database.NotesDatabase;
+import com.android.noteapp.entities.DBNote;
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
@@ -72,7 +73,9 @@ public class CreateNoteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_note);
         showAd = getIntent().getBooleanExtra("ad", false);
+        initAds();
 
+        Log.e("onCreate", showAd + "");
         ImageView imageBack = findViewById(R.id.imageBack);
         imageBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -127,8 +130,6 @@ public class CreateNoteActivity extends AppCompatActivity {
         }
         initMiscellaneous();
         setSubtitleIndicatorColor();
-        initAds();
-        showAds();
     }
 
     private void showAds() {
@@ -138,15 +139,42 @@ public class CreateNoteActivity extends AppCompatActivity {
     }
 
     private void initAds() {
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {}
-        });
 
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId(getString(R.string.my_Interstitial_Add));
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                // Code to be executed when an ad finishes loading.
+                showAds();
+            }
 
+            @Override
+            public void onAdFailedToLoad(LoadAdError adError) {
+                // Code to be executed when an ad request fails.
+            }
+
+            @Override
+            public void onAdOpened() {
+                // Code to be executed when the ad is displayed.
+            }
+
+            @Override
+            public void onAdClicked() {
+                // Code to be executed when the user clicks on an ad.
+            }
+
+            @Override
+            public void onAdLeftApplication() {
+                // Code to be executed when the user has left the app.
+            }
+
+            @Override
+            public void onAdClosed() {
+                // Code to be executed when the interstitial ad is closed.
+            }
+        });
     }
 
     public void onClick(View view) {

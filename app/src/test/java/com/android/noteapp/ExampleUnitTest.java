@@ -1,4 +1,4 @@
-package com.example.note;
+package com.android.noteapp;
 
 import org.junit.Test;
 
