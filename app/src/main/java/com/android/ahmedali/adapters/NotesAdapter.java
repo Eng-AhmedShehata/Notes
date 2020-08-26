@@ -1,4 +1,4 @@
-package com.android.noteapp.adapters;
+package com.android.ahmedali.adapters;
 
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -14,9 +14,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.android.noteapp.R;
-import com.android.noteapp.entities.DBNote;
-import com.android.noteapp.listeners.NotesListeners;
+import com.android.ahmedali.R;
+import com.android.ahmedali.entities.DBNote;
+import com.android.ahmedali.listeners.NotesListeners;
 import com.makeramen.roundedimageview.RoundedImageView;
 
 import java.util.ArrayList;

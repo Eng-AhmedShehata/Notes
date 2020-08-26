@@ -1,4 +1,4 @@
-package com.android.noteapp.activities;
+package com.android.ahmedali.activities;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -22,7 +22,6 @@ import android.provider.MediaStore;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,15 +30,13 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
-import com.android.noteapp.R;
-import com.android.noteapp.adapters.NotesAdapter;
-import com.android.noteapp.database.NotesDatabase;
-import com.android.noteapp.entities.DBNote;
-import com.android.noteapp.listeners.NotesListeners;
-import com.google.android.gms.ads.AdListener;
+import com.android.ahmedali.R;
+import com.android.ahmedali.adapters.NotesAdapter;
+import com.android.ahmedali.database.NotesDatabase;
+import com.android.ahmedali.entities.DBNote;
+import com.android.ahmedali.listeners.NotesListeners;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.LoadAdError;
 
 import java.util.ArrayList;
 import java.util.List;

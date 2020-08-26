@@ -1,4 +1,4 @@
-package com.android.noteapp.activities;
+package com.android.ahmedali.activities;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -32,16 +32,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.noteapp.R;
-import com.android.noteapp.database.NotesDatabase;
-import com.android.noteapp.entities.DBNote;
+import com.android.ahmedali.R;
+import com.android.ahmedali.database.NotesDatabase;
+import com.android.ahmedali.entities.DBNote;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.LoadAdError;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
 import java.io.InputStream;

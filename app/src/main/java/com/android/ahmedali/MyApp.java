@@ -1,4 +1,4 @@
-package com.android.noteapp;
+package com.android.ahmedali;
 
 import android.app.Application;
 

@@ -1,4 +1,4 @@
-package com.android.noteapp.entities;
+package com.android.ahmedali.entities;
 
 import androidx.annotation.Nullable;
 import androidx.room.ColumnInfo;

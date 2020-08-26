@@ -1,4 +1,4 @@
-package com.android.noteapp.database;
+package com.android.ahmedali.database;
 
 import android.content.Context;
 
@@ -6,8 +6,8 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-import com.android.noteapp.dao.NoteDao;
-import com.android.noteapp.entities.DBNote;
+import com.android.ahmedali.dao.NoteDao;
+import com.android.ahmedali.entities.DBNote;
 
 @Database(entities = DBNote.class, version = 1, exportSchema = false)
 public abstract class NotesDatabase extends RoomDatabase {

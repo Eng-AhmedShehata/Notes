@@ -1,4 +1,4 @@
-package com.android.noteapp.dao;
+package com.android.ahmedali.dao;
 
 import androidx.room.Dao;
 import androidx.room.Delete;
@@ -6,7 +6,7 @@ import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
-import com.android.noteapp.entities.DBNote;
+import com.android.ahmedali.entities.DBNote;
 
 import java.util.List;
 

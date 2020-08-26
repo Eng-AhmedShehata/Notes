@@ -13,7 +13,7 @@ android {
         }
     }
     defaultConfig {
-        applicationId "com.android.noteapp"
+        applicationId "com.ahmedali.noteapp"
         minSdkVersion 20
         targetSdkVersion 30
         versionCode 1
