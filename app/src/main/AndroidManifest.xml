@@ -33,17 +33,6 @@
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="@string/ad_app_id"/>
 
-
-      <!--  <provider
-            android:name="androidx.startup.InitializationProvider"
-            android:authorities="${applicationId}.androidx-startup"
-            android:exported="false"
-            tools:node="merge">
-            <meta-data
-                android:name="com.example.note.AdModInit"
-                android:value="androidx.startup" />
-        </provider>
--->
     </application>
 
 </manifest>
