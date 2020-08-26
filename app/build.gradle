@@ -4,6 +4,14 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 
+    signingConfigs {
+        release {
+            storeFile file(project.property("MyApp.signing"))
+            storePassword project.property("MyApp.signing.password")
+            keyAlias project.property("MyApp.signing.alias")
+            keyPassword project.property("MyApp.signing.password")
+        }
+    }
     defaultConfig {
         applicationId "com.example.note"
         minSdkVersion 20
@@ -16,8 +24,11 @@ android {
 
     buildTypes {
         release {
+            // to sign the release apk
+            signingConfig signingConfigs.release
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
         }
     }
 }
@@ -42,5 +53,10 @@ dependencies {
 
     implementation'com.google.android.material:material:1.1.0'
     implementation'com.makeramen:roundedimageview:2.3.0'
+    // For admob
+    implementation 'com.google.android.gms:play-services-ads:19.3.0'
+
+    // for app startup
+    implementation "androidx.startup:startup-runtime:1.0.0-alpha03"
 
 }

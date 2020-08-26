@@ -10,7 +10,7 @@
     <string name="Permission_Denied">Permission Denied</string>
     <string name="add_url">Add URL</string>
     <string name="enter_url">Enter URL</string>
-    <string name="cancel">CANCEL</string>
+    <string name="cancel">Cancel</string>
     <string name="add">ADD</string>
     <string name="Enter_URL">Enter URL</string>
     <string name="Enter_Valid_URL">Enter Valid URL</string>
@@ -21,4 +21,12 @@
     <string name="search_notes">Search Notes</string>
     <string name="english">English</string>
     <string name="arbic">Arabic</string>
+
+    <!--
+         only for ads
+    -->
+    <string name="ad_app_id" translatable="false">ca-app-pub-2264456879178015~5307802505</string>
+    <string name="my_Interstitial_Add" translatable="false">ca-app-pub-2264456879178015/1340637330</string>
+    <string name="banner_ad" translatable="false">ca-app-pub-2264456879178015/6425443050</string>
+
 </resources>
