@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Notes</string>
+    <string name="my_notes">ملاحظاتي</string>
+    <string name="note_title">عنوان الملاحظة</string>
+    <string name="note_subtitle">العنوان الفرعي للملاحظة</string>
+    <string name="type_note_here">اكتب الملاحظة هنا</string>
+    <string name="miscellaneous">متنوع</string>
+    <string name="pick_color">اختر اللون</string>
+    <string name="add_image">إضافة صورة</string>
+    <string name="Permission_Denied">طلب الاذن مرفوض</string>
+    <string name="add_url">إضافة رابط</string>
+    <string name="enter_url">إدخل الرابط</string>
+    <string name="cancel">إغلاق</string>
+    <string name="add">إضافة</string>
+    <string name="Enter_URL">إضافة رابط</string>
+    <string name="Enter_Valid_URL">إدخل عنوان رابط صالحاً</string>
+    <string name="are_you_sure_you_want_to_delete_this_note">هل ان متأكد انك تريد الحذف</string>
+    <string name="delete_note">حذف الملاحظة</string>
+    <string name="cancel_dialoge">إغلاق</string>
+    <string name="change_the_language">أختر اللغة</string>
+    <string name="search_notes">ملاحظات البحث</string>
+    <string name="english">اللغة الانجليزية</string>
+    <string name="arbic">اللغة العربية</string>
+</resources>
