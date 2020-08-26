@@ -21,6 +21,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,6 +36,11 @@ import android.widget.Toast;
 import com.example.note.R;
 import com.example.note.database.NotesDatabase;
 import com.example.note.entities.DBNote;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
 import java.io.InputStream;
@@ -58,11 +64,15 @@ public class CreateNoteActivity extends AppCompatActivity {
     private static final int REQUEST_CODE_STORAGE_PERMISSION = 1;
     private static final int REQUEST_CODE_SELECT_IMAGE = 2;
     private AlertDialog dialogAddURL;
+    private InterstitialAd mInterstitialAd;
+    private Boolean showAd = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_note);
+        showAd = getIntent().getBooleanExtra("ad", false);
+
         ImageView imageBack = findViewById(R.id.imageBack);
         imageBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -117,6 +127,25 @@ public class CreateNoteActivity extends AppCompatActivity {
         }
         initMiscellaneous();
         setSubtitleIndicatorColor();
+        initAds();
+        showAds();
+    }
+
+    private void showAds() {
+        if (mInterstitialAd.isLoaded() && showAd) {
+            mInterstitialAd.show();
+        }
+    }
+
+    private void initAds() {
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {}
+        });
+
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId(getString(R.string.my_Interstitial_Add));
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
 
     }
 

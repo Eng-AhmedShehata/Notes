@@ -64,6 +64,8 @@ public class MainActivity extends AppCompatActivity implements NotesListeners {
     private AlertDialog dialogAddURL;
     private AlertDialog dialogelang;
     private AdView mAdView;
+    private Boolean showAd = false;
+
 
 
     @Override
@@ -132,6 +134,7 @@ public class MainActivity extends AppCompatActivity implements NotesListeners {
         });
 
         mAdView = findViewById(R.id.adView);
+
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
@@ -233,7 +236,14 @@ public class MainActivity extends AppCompatActivity implements NotesListeners {
 
     public void onClick(View view) {
         if (view.getId() == R.id.imageAddNoteMain) {
-            startActivityForResult(new Intent(getApplicationContext(), CreateNoteActivity.class), REQUEST_CODE_ADD_NOTE);
+            Intent intent = new Intent(getApplicationContext(), CreateNoteActivity.class);
+            if (showAd) {
+                intent.putExtra("ad", false);
+            } else {
+                intent.putExtra("ad", true);
+                showAd = true;
+            }
+            startActivityForResult(intent, REQUEST_CODE_ADD_NOTE);
         }else if (view.getId()==R.id.imageLangouge){
             showLangDialoge();
         }
