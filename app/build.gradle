@@ -13,7 +13,7 @@ android {
         }
     }
     defaultConfig {
-        applicationId "com.example.note"
+        applicationId "com.example.noteee"
         minSdkVersion 20
         targetSdkVersion 30
         versionCode 1
@@ -40,6 +40,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'com.google.android.gms:play-services-ads:19.3.0'
 
 
     implementation 'androidx.room:room-runtime:2.2.5'
@@ -53,10 +54,7 @@ dependencies {
 
     implementation'com.google.android.material:material:1.1.0'
     implementation'com.makeramen:roundedimageview:2.3.0'
-    // For admob
-    implementation 'com.google.android.gms:play-services-ads:19.3.0'
-
     // for app startup
-    implementation "androidx.startup:startup-runtime:1.0.0-alpha03"
+    //implementation "androidx.startup:startup-runtime:1.0.0-alpha03"
 
 }

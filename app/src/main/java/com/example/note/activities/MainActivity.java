@@ -63,22 +63,20 @@ public class MainActivity extends AppCompatActivity implements NotesListeners {
     private int noteClickedPosition = -1;
     private AlertDialog dialogAddURL;
     private AlertDialog dialogelang;
-    private AdView mAdView;
     private Boolean showAd = false;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        initAdView();
+
         notesRecyclerView = findViewById(R.id.noteRecyclerView);
         notesRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         dbNotesList = new ArrayList<>();
         notesAdapter = new NotesAdapter(dbNotesList, this);
         notesRecyclerView.setAdapter(notesAdapter);
         getNotes(REQUEST_CODE_SHOW_NOTES, false);
-        initAdView();
 
         EditText inputSearch = findViewById(R.id.inputSearch);
         inputSearch.addTextChangedListener(new TextWatcher() {
@@ -126,14 +124,8 @@ public class MainActivity extends AppCompatActivity implements NotesListeners {
     }
 
     private void initAdView() {
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
 
-            }
-        });
-
-        mAdView = findViewById(R.id.adView);
+        AdView mAdView = findViewById(R.id.adView);
 
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);

@@ -3,6 +3,7 @@
     <!--
         only for ads
    -->
+    <string name="ad_app_id" translatable="false">ca-app-pub-3940256099942544~3347511713</string>
     <string name="my_Interstitial_Add" translatable="false">ca-app-pub-3940256099942544/1033173712</string>
     <string name="banner_ad" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
 
